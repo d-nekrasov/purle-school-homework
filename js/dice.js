@@ -9,4 +9,4 @@ function throwDice(type){
     return Math.floor(Math.random() * (maxValue - minValue + 1) + minValue)
 }
 
-console.log(throwDice('D8'
+console.log(throwDice('D8'))

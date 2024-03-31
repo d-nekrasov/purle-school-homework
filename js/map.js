@@ -16,4 +16,6 @@ const uniqueSet = new Set(arraySet.filter((object, index, arr) => {
     return arrayIDs.indexOf(object.id) === index
 }))
 
+console.log('3.11. Домашнее задание - Maps и Sets')
 console.log(uniqueSet)
+console.log('--- Конец ---')

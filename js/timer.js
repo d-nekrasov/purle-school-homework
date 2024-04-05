@@ -13,14 +13,26 @@
 
 
 const newYearDate = new Date('01.01.2025 00:00:00');
+const interval = setInterval(() => {
+    setNewYearTimer(newYearDate)
+}, 1000)
 
 
-
-function setNewYearTimer(end) {
+function setNewYearTimer(endDate) {
     const now = new Date();
-    const $timer = document.querySelector('#newYearTimer');
 
-    const diff = end.getTime() - now.getTime()
+    const newYearBeautyDate = new Intl.DateTimeFormat('RU-ru', {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+
+    }).format(endDate);
+
+    const $timer = document.querySelector('#newYearTimer');
+    const $newYearDate = document.querySelector('#newYearDate')
+
+    const diff = endDate.getTime() - now.getTime()
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24))
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
@@ -29,13 +41,11 @@ function setNewYearTimer(end) {
     const month = Math.floor(days / 30)
 
     $timer.innerHTML = `${month} месяцев, ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+    $newYearDate.innerHTML = `Окончание отсчёта: ${newYearBeautyDate}`
+
 
 }
 
 
 
-const interval = setInterval(() => {
 
-    setNewYearTimer(newYearDate)
-
-}, 1000)

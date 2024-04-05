@@ -11,14 +11,18 @@
 function ageValidate (date) {
     const birthdayDate = new Date(date)
     const nowDate = new Date()
+    let diffYear = nowDate.getFullYear() - birthdayDate.getFullYear()
+    const diffMonth = nowDate.getMonth() - birthdayDate.getMonth()
+    const diffDays = nowDate.getDate() < birthdayDate.getDate()
 
-    if (nowDate.getFullYear() - birthdayDate.getFullYear() <= 14) {
-        return  false
+    if(diffMonth < 0 || (diffMonth === 0 && diffDays > 0)) {
+        diffYear--
     }
-    return true
+
+    return diffYear >= 14;
 }
 
 console.log('5.7. Домашнее задание - Даты и время')
 console.log('1996 год:', ageValidate("1996-02-06"))
-console.log('2014 год:', ageValidate("2014-05-30"))
+console.log('2014 год:', ageValidate("2010-04-06"))
 console.log('--- Конец ---');

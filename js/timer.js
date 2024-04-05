@@ -43,9 +43,4 @@ function setNewYearTimer(endDate) {
     $timer.innerHTML = `${month} месяцев, ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
     $newYearDate.innerHTML = `Окончание отсчёта: ${newYearBeautyDate}`
 
-
 }
-
-
-
-

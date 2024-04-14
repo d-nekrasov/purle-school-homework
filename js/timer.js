@@ -12,35 +12,44 @@
  */
 
 
-const newYearDate = new Date('01.01.2025 00:00:00');
-const interval = setInterval(() => {
-    setNewYearTimer(newYearDate)
-}, 1000)
+newYearCounter('01.01.2025 00:00:00')
 
 
-function setNewYearTimer(endDate) {
-    const now = new Date();
+function newYearCounter(date) {
+    const newYearDate = new Date(date);
+    const interval = setInterval(() => {
+        setNewYearTimer(newYearDate)
+    }, 1000)
 
-    const newYearBeautyDate = new Intl.DateTimeFormat('RU-ru', {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric"
 
-    }).format(endDate);
+    function setNewYearTimer(endDate) {
+        const now = new Date();
 
-    const $timer = document.querySelector('#newYearTimer');
-    const $newYearDate = document.querySelector('#newYearDate')
+        const newYearBeautyDate = new Intl.DateTimeFormat('RU-ru', {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
 
-    const diff = endDate.getTime() - now.getTime()
+        }).format(endDate);
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000)
-    const month = Math.floor(days / 30)
+        const $timer = document.querySelector('#newYearTimer');
+        const $newYearDate = document.querySelector('#newYearDate')
 
-    $timer.innerHTML = `${month} месяцев, ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
-    $newYearDate.innerHTML = `Окончание отсчёта: ${newYearBeautyDate}`
+        const diff = endDate.getTime() - now.getTime()
 
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+        const month = Math.floor(days / 30)
+
+        $timer.innerHTML = `${month} месяцев, ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+        $newYearDate.innerHTML = `Окончание отсчёта: ${newYearBeautyDate}`
+
+    }
 }
+
+
+
+

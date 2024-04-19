@@ -34,8 +34,8 @@ function getPokemonAbilityInfo(name, lang){
 
         abilityRequest.addEventListener('load', function(){
             const { effect_entries } = JSON.parse(this.responseText)
-            const enEffectDescription = effect_entries.find(element => element?.language?.name === lang)?.effect
-            console.log(enEffectDescription)
+            const effectDescription = effect_entries.find(element => element?.language?.name === lang)?.effect
+            console.log(effectDescription)
         })
     });
 }

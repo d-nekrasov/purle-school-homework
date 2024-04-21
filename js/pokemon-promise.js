@@ -19,10 +19,6 @@
  *  - Описание методики поиска нужной информации на английском языке в ответе и её вывод в консоль.
  */
 
-
-//
-
-
 getPokemonAbilityInfo('ditto', 'en')
 
 function getPokemonAbilityInfo(name, lang) {

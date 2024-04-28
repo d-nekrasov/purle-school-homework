@@ -23,7 +23,7 @@ function getCurrentGeoPosition(){
             resolve(position)
         }, error => {
             reject(error)
-        }, {maximumAge:0, timeout:0, enableHighAccuracy:false})
+        })
     })
 }
 

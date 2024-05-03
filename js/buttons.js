@@ -17,11 +17,11 @@
     - Реализация делегирования событий.
  */
 
-initButtonsCounter('#buttons')
+initButtonsCounter('#buttons', 5)
 
 
-function initButtonsCounter(rootElementSelector){
-    generateButtons(5, rootElementSelector)
+function initButtonsCounter(rootElementSelector, btnCount){
+    generateButtons(btnCount, rootElementSelector)
     createClickCounter(rootElementSelector)
 }
 

@@ -1,2 +1,4 @@
 test.js
 .idea
+js/user-task/node_modules/
+js/user-task/dist/

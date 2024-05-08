@@ -1,0 +1,19 @@
+.btn {
+    margin: 15px;
+    padding: 10px;
+    background: #6c38cc;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn-counter {
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #333;
+    color: white;
+    min-height: 100px;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 40px;
+}
